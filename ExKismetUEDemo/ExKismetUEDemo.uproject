@@ -1,0 +1,13 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{B11DBEDB-4F31-3306-3FFE-8BA95A7E329D}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "ExKismetUEDemo",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
