@@ -26,7 +26,7 @@ public:
 	virtual UMovieScene* GetMovieScene() const override;
 	virtual UObject* GetParentObject(UObject* Object) const override;
 	virtual void UnbindPossessableObjects(const FGuid& ObjectId) override;
-	virtual UObject* CreateDirectorInstance(IMovieScenePlayer& Player) override;
+	virtual UObject* CreateDirectorInstance(IMovieScenePlayer& Player, FMovieSceneSequenceID SequenceID) override;
 
 #if WITH_EDITOR
 	virtual FText GetDisplayName() const override;

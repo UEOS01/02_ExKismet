@@ -196,7 +196,7 @@ void UExSequence::UnbindPossessableObjects(const FGuid& ObjectId)
 	ObjectReferences.RemoveBinding(ObjectId);
 }
 
-UObject* UExSequence::CreateDirectorInstance(IMovieScenePlayer& Player)
+UObject* UExSequence::CreateDirectorInstance(IMovieScenePlayer& Player, FMovieSceneSequenceID SequenceID)
 {
 	AActor* Actor = Cast<AActor>(Player.GetPlaybackContext());
 	if (!Actor)

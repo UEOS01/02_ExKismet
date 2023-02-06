@@ -306,6 +306,23 @@ public:
 				}
 			}
 			
+			if (WeakBlueprintEditor.IsValid())
+			{
+				UBlueprint* CurrentEditedBlueprint = WeakBlueprintEditor.Pin()->GetBlueprintObj();
+				if (CurrentEditedBlueprint)
+				{
+					UClass* LocalObjectClass = CurrentEditedBlueprint->GeneratedClass;
+					if(LocalObjectClass)
+					{
+						UObject* LocalDefaultObject = LocalObjectClass->GetDefaultObject();
+						if (LocalDefaultObject)
+						{
+							return LocalDefaultObject;
+						}
+					}
+				}
+			}
+
 			UObject* OuterTemp = ExSequenceAgent->GetOuter();
 			return OuterTemp;
 		}
@@ -410,7 +427,6 @@ public:
 		Options.bRequiresLevelEvents = true;
 		Options.bRequiresActorEvents = false;
 		Options.bForceRefreshDetails = false;
-		Options.bCanRecord = false;
 
 		FLevelEditorSequencerIntegration::Get().AddSequencer(Sequencer.ToSharedRef(), Options);
 	}
